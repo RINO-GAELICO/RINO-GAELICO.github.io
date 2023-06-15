@@ -325,10 +325,12 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   padding: 60px 50px;
   margin-top: -60px;
 }
-.skill h2 {
+.skill h5 {
 	font-size: 45px;
 	font-weight: 700;
+  text-align: center;
 }
+
 .skill p {
     color: #B8B8B8;
     font-size: 18px;
@@ -345,6 +347,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   width: 50%;
   margin: 0 auto 15px auto;
 }
+
 .background-image-left {
   top: 28%;
   position: absolute;
@@ -352,6 +355,15 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   width: 40%;
   z-index: -4;
 }
+.img-fluid {
+  padding: 5rem;
+}
+
+.skillText{
+  text-align: center;
+}
+
+
 
 /************ Projects Css ************/
 .project {
@@ -653,6 +665,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 .duccio {
   z-index: 1;
+  font-size: 32px;
 }
 .duccio::before {
   content: "";
@@ -669,3 +682,4 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   color: #f651ff;
   
 }
+

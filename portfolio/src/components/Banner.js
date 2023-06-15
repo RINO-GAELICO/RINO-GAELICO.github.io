@@ -9,7 +9,7 @@ export const Banner = () => {
 
     const [loop, setLoop] = useState(0);
     const [isDeleting, setisDeleting] = useState(false);
-    const toRotate = ['my website', 'my Portfolio', 'just a test'];
+    const toRotate = ['my website', 'my Portfolio', '...'];
     const [txt, setTxt] = useState('');
     const [delta, setDelta] = useState(300 - Math.random()*100); //time between letters
     const period = 2000;
@@ -20,7 +20,7 @@ export const Banner = () => {
         }, delta);
 
         return () => { clearInterval(ticker) };
-    }, [txt]);
+    });
 
     const tick = () => {
         let i = loop % toRotate.length;

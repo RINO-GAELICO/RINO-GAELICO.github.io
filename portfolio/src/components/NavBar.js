@@ -42,7 +42,7 @@ export const NavBar = () => {
           style={{ textDecoration: "none" }}
           
         >
-          <span className="duccio">Duccio Rocca</span>
+          <span className="duccio ">Duccio Rocca</span>
         </a>
       
         <Navbar.Toggle aria-controls="basic-navbar-nav">
