@@ -29,11 +29,11 @@ export const Skills = () => {
   };
 
   return (
-    <section classname="skill" id="skill">
+    <section className="skill" id="skill">
       <Container>
         <Row>
           <Col>
-            <div classname="skill-bx">
+            <div className="skill-bx">
               <h2 className="skillText">Skills</h2>
               {/* <p>Some other words here</p> */}
               <Carousel
@@ -41,20 +41,20 @@ export const Skills = () => {
                 infinite={true}
                 className="skill-slider"
               >
-                <div classname="item p-3">
-                  <img class="img-fluid"  src={python} alt="ImagePython" />
-                  <h5 className="text-center ">Python</h5>
+                <div className="item p-3">
+                  <img className="img-fluid pythonImg"  src={python} alt="ImagePython" />
+                  <h5 className="text-center">Python</h5>
                 </div>
-                <div classname="item">
-                  <img class="img-fluid" src={javascript} alt="ImageJS" />
+                <div className="item">
+                  <img className="img-fluid" src={javascript} alt="ImageJS" />
                   <h5 className="text-center">Javascript</h5>
                 </div>
-                <div classname="item">
-                  <img class="img-fluid java" src={java} alt="ImageJava" />
+                <div className="item">
+                  <img className="img-fluid java" src={java} alt="ImageJava" />
                   <h5 className="text-center">Java</h5>
                 </div>
-                <div classname="item">
-                  <img class="img-fluid" src={sql} alt="ImageSql" />
+                <div className="item">
+                  <img className="img-fluid" src={sql} alt="ImageSql" />
                   <h5 className="text-center">SQL</h5>
                 </div>
               </Carousel>

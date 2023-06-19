@@ -2,9 +2,16 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { useState, useEffect } from "react";
-
 import navIcon1 from "../assets/img/nav-icon1.svg";
 import navIcon2 from "../assets/img/nav-icon2.svg";
+import { HashLink as Link } from "react-router-dom";
+
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  NavLink,
+} from "react-router-dom";
 
 export const NavBar = () => {
   // this is the state for the active link
@@ -34,17 +41,13 @@ export const NavBar = () => {
   };
 
   return (
+    <Router>
     <Navbar className={scrolled ? "scrolled" : ""} expand="lg">
       <Container>
-      
-        <a
-          href="/"
-          style={{ textDecoration: "none" }}
-          
-        >
+        <a href="/" style={{ textDecoration: "none" }}>
           <span className="duccio ">Duccio Rocca</span>
         </a>
-      
+
         <Navbar.Toggle aria-controls="basic-navbar-nav">
           <span className="navbar-toggler-icon"></span>
         </Navbar.Toggle>
@@ -70,6 +73,7 @@ export const NavBar = () => {
             >
               Skills
             </Nav.Link>
+
             <Nav.Link
               id="projects"
               href="#projects"
@@ -108,5 +112,6 @@ export const NavBar = () => {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+    </Router>
   );
 };
