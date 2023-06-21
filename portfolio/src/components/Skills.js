@@ -6,8 +6,11 @@ import javascript from "../assets/img/javascript-logo.png";
 import java from "../assets/img/java.png";
 import sql from "../assets/img/sql.png";
 import colorSharp from "../assets/img/color-sharp.png";
+import { useEffect,useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 export const Skills = () => {
+
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -28,8 +31,33 @@ export const Skills = () => {
     },
   };
 
+  const [hasScrolled, setHasScrolled] = useState(false);
+
+  const faqSectionRef = useRef(null);
+
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (faqSectionRef.current && hash === "#skills" && !hasScrolled) {
+      faqSectionRef.current.scrollIntoView({
+        behavior: "smooth",
+
+        inline: "center",
+
+        block: "center",
+      });
+
+      setHasScrolled(true);
+    }
+
+    return () => {
+      setHasScrolled(false);
+    };
+  }, [faqSectionRef, hash]);
+  
+
   return (
-    <section className="skill" id="skill">
+    <section className="skill" id="skills" ref={faqSectionRef}>
       <Container>
         <Row>
           <Col>
@@ -42,7 +70,11 @@ export const Skills = () => {
                 className="skill-slider"
               >
                 <div className="item p-3">
-                  <img className="img-fluid pythonImg"  src={python} alt="ImagePython" />
+                  <img
+                    className="img-fluid pythonImg"
+                    src={python}
+                    alt="ImagePython"
+                  />
                   <h5 className="text-center">Python</h5>
                 </div>
                 <div className="item">

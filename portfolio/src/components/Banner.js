@@ -1,9 +1,10 @@
 import { Col, Container, Row } from "react-bootstrap";
 import { ArrowRightCircle } from "react-bootstrap-icons";
 import headerImg from '../assets/img/duccio-computer.png';
-import { useEffect,useState } from "react";
+import { useEffect,useState, useRef } from "react";
 import TrackVisibility from "react-on-screen";
 import 'animate.css';
+import { useLocation } from "react-router-dom";
 
 
 
@@ -45,6 +46,29 @@ export const Banner = () => {
     }
 
     
+    const [hasScrolled, setHasScrolled] = useState(false);
+
+  const faqSectionRef = useRef(null);
+
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (faqSectionRef.current && hash === "#" && !hasScrolled) {
+      faqSectionRef.current.scrollIntoView({
+        behavior: "smooth",
+
+        inline: "center",
+
+        block: "center",
+      });
+
+      setHasScrolled(true);
+    }
+
+    return () => {
+      setHasScrolled(false);
+    };
+  }, [faqSectionRef, hash]);
 
   return (
     <section className="banner" id="home" >
@@ -54,11 +78,16 @@ export const Banner = () => {
           <Col xs={12} md={6} xl={7}>
           <TrackVisibility>
           {({ isVisible }) => 
-          <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-            <span className="tagline">Welcome to Duccio's Portfolio</span>
+          <div className={isVisible ? "animate__animated animate__fadeInLeft" : ""}>
+            <span className="tagline">Welcome to my Portfolio Website</span>
             <h1 > {`This is `}<span className="wrap">{txt}</span></h1>
-            <p>Just some more info here</p>
-            <button onClick={()=> console.log('connect')}>Let's Connect<ArrowRightCircle size={25}/></button>
+            <p>I am an aspiring software engineering, currently pursuing a Master's degree in Computer Science from San Francisco State University. 
+              As a GTA, I had the opportunity to teach a comprehensive course on Data Structures in Java.
+              Additionally, I possess hands-on experience in developing full-stack web applications, which has honed my skills in front-end and back-end development.</p>
+            <button onClick={()=> {
+              const contactSection = document.getElementById('connect');
+              contactSection.scrollIntoView({ behavior: 'smooth' });
+            }}>Let's Connect<ArrowRightCircle size={25}/></button>
             </div>}
             </TrackVisibility>
           </Col>

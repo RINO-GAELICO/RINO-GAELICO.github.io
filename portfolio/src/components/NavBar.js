@@ -4,14 +4,8 @@ import Navbar from "react-bootstrap/Navbar";
 import { useState, useEffect } from "react";
 import navIcon1 from "../assets/img/nav-icon1.svg";
 import navIcon2 from "../assets/img/nav-icon2.svg";
-import { HashLink as Link } from "react-router-dom";
 
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  NavLink,
-} from "react-router-dom";
+
 
 export const NavBar = () => {
   // this is the state for the active link
@@ -32,6 +26,8 @@ export const NavBar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  
+
   const onUpdateActiveLink = (link) => {
     // make sure to re-render the navbar after we update the active link
 
@@ -39,9 +35,10 @@ export const NavBar = () => {
 
     setActiveLink(link);
   };
+  
 
   return (
-    <Router>
+   
     <Navbar className={scrolled ? "scrolled" : ""} expand="lg">
       <Container>
         <a href="/" style={{ textDecoration: "none" }}>
@@ -53,9 +50,9 @@ export const NavBar = () => {
         </Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
+          
             <Nav.Link
-              id="home"
-              href="#home"
+              href="#home"  
               className={
                 activeLink === "home" ? "active navbar-link" : "navbar-link"
               }
@@ -63,19 +60,23 @@ export const NavBar = () => {
             >
               Home
             </Nav.Link>
+            
+            
             <Nav.Link
-              id="skills"
               href="#skills"
               className={
                 activeLink === "skills" ? "active navbar-link" : "navbar-link"
               }
-              onClick={() => onUpdateActiveLink("skills")}
-            >
+              onClick={() => onUpdateActiveLink("skills")}>
+              
               Skills
             </Nav.Link>
+            
 
+
+            
             <Nav.Link
-              id="projects"
+              
               href="#projects"
               className={
                 activeLink === "projects"
@@ -86,6 +87,7 @@ export const NavBar = () => {
             >
               Projects
             </Nav.Link>
+            
           </Nav>
           <span className="navbar-text">
             <div className="social-icon">
@@ -104,7 +106,10 @@ export const NavBar = () => {
                 <img src={navIcon2} alt="GitHub Logo" />
               </a>
 
-              <button className="vvd" onClick={() => console.log("connect")}>
+              <button className="vvd" onClick={() => {
+                const contactSection = document.getElementById('connect');
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+              }}>
                 <span>Let's Connect</span>{" "}
               </button>
             </div>
@@ -112,6 +117,6 @@ export const NavBar = () => {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-    </Router>
+    
   );
 };
