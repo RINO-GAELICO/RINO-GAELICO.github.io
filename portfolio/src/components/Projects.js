@@ -76,23 +76,23 @@ export const Projects = () => {
 
   const { hash } = useLocation();
 
-  useEffect(() => {
-    if (faqSectionRef.current && hash === "#projects" && !hasScrolled) {
-      faqSectionRef.current.scrollIntoView({
-        behavior: "smooth",
+  // useEffect(() => {
+  //   if (faqSectionRef.current && hash === "#projects" && !hasScrolled) {
+  //     faqSectionRef.current.scrollIntoView({
+  //       behavior: "smooth",
 
-        inline: "center",
+  //       inline: "center",
 
-        block: "center",
-      });
+  //       block: "center",
+  //     });
 
-      setHasScrolled(true);
-    }
+  //     setHasScrolled(true);
+  //   }
 
-    return () => {
-      setHasScrolled(false);
-    };
-  }, [faqSectionRef, hash]);
+  //   return () => {
+  //     setHasScrolled(false);
+  //   };
+  // }, [faqSectionRef, hash]);
   
 
   return (
