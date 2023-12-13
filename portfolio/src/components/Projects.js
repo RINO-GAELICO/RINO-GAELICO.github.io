@@ -126,7 +126,7 @@ export const Projects = () => {
                   
                   <Tab.Pane eventKey="link-1">
                   <p>In this project I took the role of Backend Lead. We developed a web application focused on facilitating the exchange of multimedia files. 
-                    The application, named GaterTrader, can be accessed at https://gatertrader.com/ and the project repository is available on GitHub at https://github.com/RINO-GAELICO/gaterTrader.
+                    The application, named GaterTrader, can be accessed at https://gatertrader.com/ and the project repository is available on GitHub at <a href="https://github.com/RINO-GAELICO/gaterTrade">https://github.com/RINO-GAELICO/gaterTrader</a>.
                     </p>
                     <Row>
                       {projects1.map((project, index) => {
@@ -135,7 +135,7 @@ export const Projects = () => {
                     </Row>
                   </Tab.Pane>
                   <Tab.Pane eventKey="link-2">
-                    <p> For this project I implemented a face-recognition system that uses Principal Component Analysis. The project's repository can be found at https://github.com/RINO-GAELICO/EigenFaces.
+                    <p> For this project I implemented a face-recognition system that uses Principal Component Analysis. The project's repository can be found at <a href="https://github.com/RINO-GAELICO/EigenFaces">https://github.com/RINO-GAELICO/EigenFaces</a>.
 
 The system's performance was assessed through both qualitative and quantitative analyses of the results, resulting in an accuracy rate of 82%.</p>
                     <Row>
