@@ -45,7 +45,7 @@ export const Banner = () => {
         }
     }
 
-    
+
     const [hasScrolled, setHasScrolled] = useState(false);
 
   const faqSectionRef = useRef(null);
@@ -74,16 +74,14 @@ export const Banner = () => {
     <section className="banner" id="home" >
       <Container>
         <Row className="align-items-center">
-          
+
           <Col xs={12} md={6} xl={7}>
           <TrackVisibility>
-          {({ isVisible }) => 
+          {({ isVisible }) =>
           <div className={isVisible ? "animate__animated animate__fadeInLeft" : ""}>
-            <span className="tagline">Welcome to my Portfolio Website</span>
+            <span className="tagline">Welcome to Duccio's Website</span>
             <h1 > {`This is `}<span className="wrap">{txt}</span></h1>
-            <p>I am an aspiring software engineering, currently pursuing a Master's degree in Computer Science from San Francisco State University. 
-              As a GTA, I had the opportunity to teach a comprehensive course on Data Structures in Java.
-              Additionally, I possess hands-on experience in developing full-stack web applications, which has honed my skills in front-end and back-end development.</p>
+            <p>I am passionate about solving problems, understanding systems, and building innovative solutions. I value collaboration and continuous learning and hold a Master's in Computer Science from San Francisco State University, with experience in high-performance computing, Kubernetes, and full-stack development.</p>
             <button onClick={()=> {
               const contactSection = document.getElementById('connect');
               contactSection.scrollIntoView({ behavior: 'smooth' });
@@ -93,7 +91,7 @@ export const Banner = () => {
           </Col>
           <Col xs={12} md={6} xl={5}>
             <img src={headerImg} alt="Header Img"/>
-          
+
             </Col>
         </Row>
       </Container>
