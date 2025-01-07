@@ -52,7 +52,7 @@ jobs:
 
 
       - name: List files in build directory
-        run: ls -R ./portfolio/build
+        run: ls -R ./
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4  # A popular GitHub Action for deploying to GitHub Pages
