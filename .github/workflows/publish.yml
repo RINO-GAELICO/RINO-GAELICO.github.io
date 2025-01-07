@@ -50,8 +50,14 @@ jobs:
           git config --global user.name "GitHub Actions"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
+
+      - name: List files in build directory
+        run: ls -R ./portfolio/build
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4  # A popular GitHub Action for deploying to GitHub Pages
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}  # GitHub token for authentication
-          publish_dir: ./build # Directory to deploy
+          publish_dir: ./portfolio/build # Directory to deploy
+
+
