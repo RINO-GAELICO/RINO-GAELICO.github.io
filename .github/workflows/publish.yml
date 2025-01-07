@@ -28,7 +28,6 @@ jobs:
       # Step 4: Build the React app
       - name: Build React App in Portfolio
         run: |
-          cd portfolio
           npm install
           npm run build
         working-directory: ./portfolio
