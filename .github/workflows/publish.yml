@@ -28,10 +28,12 @@ jobs:
       # Step 3: Install dependencies
       - name: Install Dependencies
         run: npm install
+        working-directory: ./portfolio
 
       # Step 4: Build the React app
       - name: Build React App
         run: npm run build
+        working-directory: ./portfolio
 
       # Step 5: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
