@@ -1,0 +1,41 @@
+# This is a basic workflow to build and deploy a React app to GitHub Pages
+
+name: Deploy React App to GitHub Pages
+
+on:
+  # Triggers the workflow on push or pull request events for the "reactWebsite" branch
+  push:
+    branches: [ "reactWebsite" ]
+  pull_request:
+    branches: [ "reactWebsite" ]
+
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the code from the repository
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # Step 2: Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16 # Use a Node.js version compatible with your project
+
+      # Step 3: Install dependencies
+      - name: Install Dependencies
+        run: npm install
+
+      # Step 4: Build the React app
+      - name: Build React App
+        run: npm run build
+
+      # Step 5: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
