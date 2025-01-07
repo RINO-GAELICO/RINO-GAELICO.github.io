@@ -14,8 +14,8 @@ import prjImg8 from "../assets/img/Pj3_B.png";
 import prjImg9 from "../assets/img/Pj3_C.png";
 import TrackVisibility from "react-on-screen";
 import 'animate.css';
-import { useRef, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useRef } from "react";
+
 
 export const Projects = () => {
   const projects1 = [
