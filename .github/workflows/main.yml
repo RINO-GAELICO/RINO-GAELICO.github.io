@@ -1,0 +1,69 @@
+name: Deploy React App to GitHub Pages
+
+on:
+  push:
+    branches: [ "reactWebsite" ]
+  pull_request:
+    branches: [ "reactWebsite" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+
+    steps:
+      # Step 1: Check out the code from the repository
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # Step 2: Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16 # Use a Node.js version compatible with your project
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
+        working-directory: ./portfolio
+
+      # Step 4: Build the React app
+      - name: Build React App in Portfolio
+        run: |
+          npm run build
+        working-directory: ./portfolio
+
+      # Debug: List files in the portfolio directory after build
+      - name: List files in portfolio directory after build
+        run: ls -R ./portfolio
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build  # Ensure build job runs before deploy
+    environment:
+      name: github-pages
+      url: https://ducciorocca.com
+    steps:
+      # Step 1: Checkout the `gh-pages` branch
+      - name: Checkout repository (gh-pages)
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages  # Checkout the `gh-pages` branch for deployment
+
+      # Step 2: Set up Git configuration
+      - name: Set up Git
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      # Debug: List files in the current directory (before deployment)
+      - name: List files in the repository
+        run: ls -R ./
+
+      # Step 3: Deploy to GitHub Pages using peaceiris actions-gh-pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./portfolio/build  # Specify the correct directory to deploy
