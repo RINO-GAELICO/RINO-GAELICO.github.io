@@ -1,62 +1,39 @@
-name: Deploy React App to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ "reactWebsite" ]
-  pull_request:
-    branches: [ "reactWebsite" ]
+    branches: [ reactWebsite ]
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  build-and-deploy:
     environment:
       name: github-pages
-
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
     steps:
-      # Step 1: Check out the code from the repository
-      - name: Checkout Code
+      - name: Checkout
         uses: actions/checkout@v4
-
-      # Step 2: Set up Node.js
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: 16
-
-      # Step 3: Install dependencies
+          node-version: '18'
       - name: Install dependencies
         run: npm install
-        working-directory: ./portfolio
-
-      # Step 4: Build the React app
-      - name: Build React App in Portfolio
-        run: |
-          npm run build
-        working-directory: ./portfolio
-
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build  # Ensure build job runs before deploy
-    environment:
-      name: github-pages
-
-    steps:
-      # Step 1: Checkout the `gh-pages` branch
-      - name: Checkout repository (gh-pages)
-        uses: actions/checkout@v4
+      - name: Build
+        run: npm run build
+      - name: Upload
+        uses: actions/upload-artifact@v3
         with:
-          ref: reactWebsite
-
-      # # Step 2: Set up Git configuration
-      # - name: Set up Git
-      #   run: |
-      #     git config --global user.name "GitHub Actions"
-      #     git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
-      # Step 3: Deploy to GitHub Pages using peaceiris actions-gh-pages
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+          name: 'github-pages'
+          path: portfolio/build
+      - name: Deploy
+        uses: actions/deploy-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./portfolio/build  # Specify the correct directory to deploy
-          publish_branch: gh-pages
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifact_name: 'github-pages'
+
+
