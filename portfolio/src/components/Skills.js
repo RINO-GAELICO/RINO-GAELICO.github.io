@@ -53,8 +53,8 @@ export const Skills = () => {
     return () => {
       setHasScrolled(false);
     };
-  }, [faqSectionRef, hash]);
-  
+  }, [faqSectionRef, hash, hasScrolled]);
+
 
   return (
     <section className="skill" id="skills" ref={faqSectionRef}>

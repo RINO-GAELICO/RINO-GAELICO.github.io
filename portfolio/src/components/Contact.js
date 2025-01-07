@@ -66,7 +66,7 @@ export const Contact = () => {
     return () => {
       setHasScrolled(false);
     };
-  }, [faqSectionRef, hash]);
+  }, [faqSectionRef, hash, hasScrolled]);
 
   return (
     <section className="contact" id="connect" ref={faqSectionRef}>
@@ -101,8 +101,8 @@ export const Contact = () => {
                     </button>
                     {showSuccessMessage && (
                       <Col>
-                        <p 
-                        
+                        <p
+
                         style={{fontSize: "2rem"}}
 
                         className="success p-3"

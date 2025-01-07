@@ -14,7 +14,7 @@ import prjImg8 from "../assets/img/Pj3_B.png";
 import prjImg9 from "../assets/img/Pj3_C.png";
 import TrackVisibility from "react-on-screen";
 import 'animate.css';
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 
 export const Projects = () => {
@@ -70,30 +70,9 @@ export const Projects = () => {
     },
   ];
 
-  const [hasScrolled, setHasScrolled] = useState(false);
 
   const faqSectionRef = useRef(null);
 
-  const { hash } = useLocation();
-
-  // useEffect(() => {
-  //   if (faqSectionRef.current && hash === "#projects" && !hasScrolled) {
-  //     faqSectionRef.current.scrollIntoView({
-  //       behavior: "smooth",
-
-  //       inline: "center",
-
-  //       block: "center",
-  //     });
-
-  //     setHasScrolled(true);
-  //   }
-
-  //   return () => {
-  //     setHasScrolled(false);
-  //   };
-  // }, [faqSectionRef, hash]);
-  
 
   return (
     <section className="project" id="projects" ref={faqSectionRef}>
@@ -122,10 +101,10 @@ export const Projects = () => {
                   </Nav.Item>
                 </Nav>
                 <Tab.Content>
-                
-                  
+
+
                   <Tab.Pane eventKey="link-1">
-                  <p>In this project I took the role of Backend Lead. We developed a web application focused on facilitating the exchange of multimedia files. 
+                  <p>In this project I took the role of Backend Lead. We developed a web application focused on facilitating the exchange of multimedia files.
                     The application, named GaterTrader, can be accessed at <a href="https://gatertrader.com/" > gatertrader.com </a> and the project repository is available on GitHub at <a href="https://github.com/RINO-GAELICO/gaterTrade">github.com/RINO-GAELICO/gaterTrader</a>.
                     </p>
                     <Row>
@@ -144,7 +123,7 @@ The system's performance was assessed through both qualitative and quantitative 
                       })}
                     </Row>
                   </Tab.Pane>
-                  
+
                   <Tab.Pane eventKey="link-3">
                   <p>For this project, our team undertook the development of a file system based on the FAT32 format. The file system was designed using a 32-bit File Allocation Table (FAT) composed of 512-byte blocks, implemented in the C programming language.</p>
                     <Row>
@@ -155,7 +134,7 @@ The system's performance was assessed through both qualitative and quantitative 
                   </Tab.Pane>
                 </Tab.Content>
               </Tab.Container>
-              
+
             </div>
             </div>}
             </TrackVisibility>

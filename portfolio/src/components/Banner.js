@@ -68,7 +68,7 @@ export const Banner = () => {
     return () => {
       setHasScrolled(false);
     };
-  }, [faqSectionRef, hash]);
+  }, [faqSectionRef, hash, hasScrolled]);
 
   return (
     <section className="banner" id="home" >
