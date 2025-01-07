@@ -43,23 +43,19 @@ jobs:
     needs: build  # Ensure build job runs before deploy
     environment:
       name: github-pages
-      url: https://ducciorocca.com
+      url: https://www.ducciorocca.com
     steps:
       # Step 1: Checkout the `gh-pages` branch
-      - name: Checkout repository (gh-pages)
-        uses: actions/checkout@v4
-        with:
-          ref: gh-pages  # Checkout the `gh-pages` branch for deployment
+      # - name: Checkout repository (gh-pages)
+      #   uses: actions/checkout@v4
+      #   with:
+      #     ref: gh-pages  # Checkout the `gh-pages` branch for deployment
 
-      # Step 2: Set up Git configuration
-      - name: Set up Git
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
-      # Debug: List files in the current directory (before deployment)
-      - name: List files in the repository
-        run: ls -R ./
+      # # Step 2: Set up Git configuration
+      # - name: Set up Git
+      #   run: |
+      #     git config --global user.name "GitHub Actions"
+      #     git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
       # Step 3: Deploy to GitHub Pages using peaceiris actions-gh-pages
       - name: Deploy to GitHub Pages
