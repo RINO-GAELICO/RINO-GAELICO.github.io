@@ -5,6 +5,8 @@ import python from "../assets/img/python-logo.png";
 import javascript from "../assets/img/javascript-logo.png";
 import java from "../assets/img/java.png";
 import sql from "../assets/img/sql.png";
+import k8s from "../assets/img/k8s.png";
+import react from "../assets/img/react.png";
 import colorSharp from "../assets/img/color-sharp.png";
 import { useEffect,useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
@@ -88,6 +90,14 @@ export const Skills = () => {
                 <div className="item">
                   <img className="img-fluid" src={sql} alt="ImageSql" />
                   <h5 className="text-center">SQL</h5>
+                </div>
+                <div className="item">
+                  <img className="img-fluid" src={k8s} alt="ImageSql" />
+                  <h5 className="text-center">K8s</h5>
+                </div>
+                <div className="item">
+                  <img className="img-fluid" src={react} alt="ImageSql" />
+                  <h5 className="text-center">React</h5>
                 </div>
               </Carousel>
             </div>

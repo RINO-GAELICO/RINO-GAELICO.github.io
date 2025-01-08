@@ -5,9 +5,9 @@ import { ProjectCard } from "./ProjectCard";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import prjImg1 from "../assets/img/Pj1_A.png";
 import prjImg2 from "../assets/img/Pj1_B.png";
-import prjImg3 from "../assets/img/PJ_C.png";
-import prjImg4 from "../assets/img/Pj2_B.png";
-import prjImg5 from "../assets/img/Pj2_A.png";
+import prjImg3 from "../assets/img/Pj1_C.png";
+import prjImg4 from "../assets/img/Pj2_B_old.png";
+import prjImg5 from "../assets/img/Pj2_B.png";
 import prjImg6 from "../assets/img/Pj2_C.png";
 import prjImg7 from "../assets/img/Pj3_A.png";
 import prjImg8 from "../assets/img/Pj3_B.png";
@@ -20,55 +20,55 @@ import { useRef } from "react";
 export const Projects = () => {
   const projects1 = [
     {
-      title: "Frontend",
-      description: "I leveraged technologies such as HTML, CSS, JavaScript, Handlebars, and Bootstrap to create dynamic and responsive web pages.",
+      title: "GaterTrader",
+      description: "We developed a web application that facilitates the exchange of multimedia files. It allows users to upload, download, and share files. I implemented the backend system using Node.js and Express.js, integrated a database, and deployed the application on AWS.",
       imageUrl: prjImg1,
     },
     {
-      title: "Node, Express, and MySql",
-      description: "On the server side, I designed and developed the backend of the application, including the database to store user information and the multimedia files.",
+      title: "Analytical Engine in Healthcare Application",
+      description: "I designed and implemented a user-centric tool for data retrieval and augmentation, visualization, and advanced analysis within the HVFQI web application. The tool I implemented allows users to gain real-time insights from complex datasets.",
       imageUrl: prjImg2,
     },
     {
-      title: "AWS EC2",
-      description: "The application was deployed on AWS EC2, and the domain name is registered on AWS Route 53",
+      title: "Infrastructure Contributions",
+      description: "I designed and configured an AWS EKS cluster, implementing an Ingress Controller to manage traffic routing between two services: one supporting the game platform and another, the 'llm' service, which interacts with the platform via APIs and provides a user-facing playground interface.",
       imageUrl: prjImg3,
     },
   ];
   const projects2 = [
     {
-      title: "PCA",
-      description: "PCA is a powerful dimensionality reduction technique widely used in computer vision. By employing PCA, I effectively extracted the most discriminative features from facial images.",
+      title: "EigenFaces",
+      description: "Inspired by the famous paper from M. Turk and A. Pentland, I developed (with Matlab) a face-recognition system that extracted discriminative facial features leveraging PCA. The system utilized a nearest-neighbor classification approach with Euclidean distance to measure facial similarity, achieving an accuracy rate of 82%",
       imageUrl: prjImg4,
     },
     {
-      title: "Nearest-neighbor classification",
-      description: "The face-recognition system incorporated a nearest-neighbor classification approach, utilizing the Euclidean distance metric to measure the similarity between faces.",
+      title: "Image Segmentation",
+      description: "Conducted an in-depth investigation into the parallel implementation of the Mean Shift algorithm for image segmentation. Utilizing OpenMP and CUDA, the project focused on optimizing performance and addressing computational intensity to enhance real-time applicability.",
       imageUrl: prjImg5,
     },
     {
-      title: "Accuracy rate",
-      description: " I evaluated the system's performance through accuracy rate. The final result was 82% accuracy rate, which validated the effectiveness and robustness of the system.",
+      title: "CVI screener",
+      description: " Developed a ML-based screening tool for early detection of cognitive visual impairment (CVI), utilizing a feedforward neural network (FNN) for classification. By employing systematic feature selection, the tool reduced the number of required questions to five while maintaining high predictive accuracy.",
       imageUrl: prjImg6,
     },
   ];
   const projects3 = [
     {
-      title: "FAT Table",
-      description: "To locate a file or a specific cluster on the storage device, the FAT32 file system uses the FAT32 table. It starts from the root directory and follows a chain of entries in the table, each pointing to the next cluster in the file or directory. This chain of entries forms a linked list that allows the file system to navigate through the clusters and access the data.",
+      title: "K8s for HPC",
+      description: "Implemented Kubernetes (K8s) integration into the High-Performance Computing (HPC) NERSC system, enhancing resource allocation and container deployment using Podman on suitable nodes, optimizing workflows for large-scale computational tasks.",
       imageUrl: prjImg7,
     },
     {
-      title: "Basic I/O operations",
-      description: "It incorporated functionality for performing input/output (I/O) operations, allowing users to read from and write to files stored within the file system.",
+      title: "FaaS for HPC",
+      description: "Contributed to the evaluation and optimization of Function-as-a-Service (FaaS) tools, analyzing performance metrics such as throughput and scalability, and improving computational efficiency for high-performance computing environments.",
       imageUrl: prjImg8,
     },
     {
-      title: "File system",
-      description: "Throughout the project, I gained a deeper understanding of file system design and implementation. Working with data structures such as directory structures and file control blocks, I ensured proper organization and management of files and directories within the file system.",
+      title: "Documentation",
+      description: "Drafted comprehensive documentation for over 1000 NERSC users through GitLab, detailing the integration of FaaS tools. Presented experimental results to more than 100 colleagues, ensuring clarity and accessibility of technical information for efficient collaboration.",
       imageUrl: prjImg9,
     },
-  ];
+];
 
 
   const faqSectionRef = useRef(null);
@@ -81,7 +81,7 @@ export const Projects = () => {
           <Col size={12}>
           <TrackVisibility>
               {({ isVisible }) =>
-              <div className={isVisible ? "animate__animated animate__fadeInLeft": ""}>
+              <div className={isVisible ? "animate__animated": ""}>
             <div className="project-bx">
               <h2 className="projectText">Projects</h2>
               <Tab.Container id="projects-tabs" defaultActiveKey="link-1">
@@ -91,21 +91,22 @@ export const Projects = () => {
                   id="pills-tab"
                 >
                   <Nav.Item>
-                    <Nav.Link eventKey="link-1">Web App</Nav.Link>
+                    <Nav.Link eventKey="link-1">Web</Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
-                    <Nav.Link eventKey="link-2">Eigenfaces PCA</Nav.Link>
+                    <Nav.Link eventKey="link-2">Machine Learning</Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
-                    <Nav.Link eventKey="link-3">File System FAT32</Nav.Link>
+                    <Nav.Link eventKey="link-3">Kubernetes/HPC</Nav.Link>
                   </Nav.Item>
                 </Nav>
                 <Tab.Content>
 
 
                   <Tab.Pane eventKey="link-1">
-                  <p>In this project I took the role of Backend Lead. We developed a web application focused on facilitating the exchange of multimedia files.
-                    The application, named GaterTrader, can be accessed at <a href="https://gatertrader.com/" > gatertrader.com </a> and the project repository is available on GitHub at <a href="https://github.com/RINO-GAELICO/gaterTrade">github.com/RINO-GAELICO/gaterTrader</a>.
+                  <p>
+                  I have contributed to multiple projects requiring web development skills.
+                  I developed backend systems using Node.js and Express.js, integrated databases, deployed the application on AWS. Additionally, I created responsive and dynamic web pages using React and TypeScript.
                     </p>
                     <Row>
                       {projects1.map((project, index) => {
@@ -114,9 +115,7 @@ export const Projects = () => {
                     </Row>
                   </Tab.Pane>
                   <Tab.Pane eventKey="link-2">
-                    <p> For this project I implemented a face-recognition system that uses Principal Component Analysis. The project's repository can be found at <a href="https://github.com/RINO-GAELICO/EigenFaces">github.com/RINO-GAELICO/EigenFaces</a>.
-
-The system's performance was assessed through both qualitative and quantitative analyses of the results, resulting in an accuracy rate of 82%.</p>
+                    <p> I have worked on multiple projects leveraging machine learning techniques. One such project involved implementing a face-recognition system using Principal Component Analysis. Another project focused on optimizing an image segmentation application through parallelization using OpenMP and CUDA. Additionally, I developed a Feedforward Neural Network using PyTorch. </p>
                     <Row>
                       {projects2.map((project, index) => {
                         return <ProjectCard key={index} {...project} />;
@@ -125,7 +124,7 @@ The system's performance was assessed through both qualitative and quantitative 
                   </Tab.Pane>
 
                   <Tab.Pane eventKey="link-3">
-                  <p>For this project, our team undertook the development of a file system based on the FAT32 format. The file system was designed using a 32-bit File Allocation Table (FAT) composed of 512-byte blocks, implemented in the C programming language.</p>
+                  <p>During my internship at Berkeley Lab, I worked on integrating Kubernetes into the HPC NERSC system to improve adaptability and efficiency. This included implementing a control plane for Slurm resource allocation and deploying containers with Podman on appropriate nodes. I also contributed to optimizing Function-as-a-Service (FaaS) tools, evaluating performance using metrics like throughput and scaling efficiency.</p>
                     <Row>
                       {projects3.map((project, index) => {
                         return <ProjectCard key={index} {...project} />;

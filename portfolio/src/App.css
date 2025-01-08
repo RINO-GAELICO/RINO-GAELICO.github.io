@@ -109,12 +109,12 @@ nav.navbar .navbar-nav a.nav-link.navbar-link:hover,
 nav.navbar .navbar-nav a.nav-link.navbar-link.active {
     opacity: 1;
     color: #f651ff;
-    
+
 }
 span.navbar-text {
     display: flex;
     align-items: center;
-    
+
 }
 .social-icon {
     display: inline-block;
@@ -246,7 +246,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .banner {
   margin-top: 0;
   padding: 260px 0 100px 0;
-  
+
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -429,9 +429,14 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .project .nav.nav-pills .nav-link.active::before {
     width: 100% !important;
 }
-.project .nav.nav-pills .nav-link.active {
-    border: 1px solid rgba(255, 255, 255, 1);
+
+.proj-imgbx img {
+  width: 100%; /* Ensures the image fills the container's width */
+  height: 250px; /* Sets a fixed height */
+  object-fit: cover; /* Ensures the image is cropped to fit while preserving aspect ratio */
+  border-radius: 8px; /* Optional: Adds rounded corners for a polished look */
 }
+
 .nav-link#projects-tabs-tab-first {
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 55px 0px 0px 55px;
@@ -653,7 +658,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 	position: relative;
 	background-color: transparent;
 	transition: 0.3s ease-in-out;
-  
+
 }
 
 
@@ -674,6 +679,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 .duccio:hover {
   color: #f651ff;
-  
+
 }
 
