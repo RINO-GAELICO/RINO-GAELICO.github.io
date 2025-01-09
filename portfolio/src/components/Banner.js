@@ -79,8 +79,8 @@ export const Banner = () => {
           <TrackVisibility>
           {({ isVisible }) =>
           <div className={isVisible ? "animate__animated" : ""}>
-            <span className="tagline">Welcome to Duccio's Website</span>
-            <h1 > {`This is `}<span className="wrap">{txt}</span></h1>
+            <span className="tagline">Hi I'm a software Engineer</span>
+            <h1 > {`Welcome to `}<span className="wrap">{txt}</span></h1>
             <p>I am passionate about solving problems, understanding systems, and building innovative solutions. I value collaboration and continuous learning and hold a Master's in Computer Science from San Francisco State University, with experience in high-performance computing, Kubernetes, and full-stack development.</p>
             <button onClick={()=> {
               const contactSection = document.getElementById('connect');

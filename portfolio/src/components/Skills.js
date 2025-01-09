@@ -73,7 +73,7 @@ export const Skills = () => {
               >
                 <div className="item p-3">
                   <img
-                    className="img-fluid pythonImg"
+                    className="img-fluid "
                     src={python}
                     alt="ImagePython"
                   />
@@ -84,7 +84,7 @@ export const Skills = () => {
                   <h5 className="text-center">Javascript</h5>
                 </div>
                 <div className="item">
-                  <img className="img-fluid java" src={java} alt="ImageJava" />
+                  <img className="img-fluid" src={java} alt="ImageJava" />
                   <h5 className="text-center">Java</h5>
                 </div>
                 <div className="item">
